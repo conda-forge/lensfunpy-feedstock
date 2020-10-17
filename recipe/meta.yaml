@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/letmaik/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: d173e6fdbbeb83c10401ad7af276606e812960307c0d5dc58f03c3a39efd7746
+  sha256: 69ac4d0e1c59a57e9bbd0da62b0455c37d954bc5afe40f155e86847d4b8751b6
   patches:
     - 0002_remove_osx_condition.patch
 
