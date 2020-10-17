@@ -22,16 +22,18 @@ requirements:
     - {{ compiler('cxx') }}
     - pkg-config
   host:
-    - pip
-    - python
+    - cython
+    - delocate  # [osx]
     - lensfun <0.3.95
     - numpy
+    - pip
+    - python
   run:
+    - cython
     - {{ pin_compatible('numpy') }}
     - lensfun <0.3.95
     - {{ pin_compatible('lensfun') }}
     - python
-    - cython
     - scipy
 
 test:
