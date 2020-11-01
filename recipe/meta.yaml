@@ -1,39 +1,40 @@
 {% set name = "lensfunpy" %}
-{% set version = "1.6.1" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d173e6fdbbeb83c10401ad7af276606e812960307c0d5dc58f03c3a39efd7746
+  url: https://github.com/letmaik/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 69ac4d0e1c59a57e9bbd0da62b0455c37d954bc5afe40f155e86847d4b8751b6
   patches:
-    - 0002_remove_osx_condition.patch  
+    - 0002_remove_osx_condition.patch
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . -vv 
-  skip: True  # [win or py<27]
-   
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [win]
+
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - pkg-config        
+    - pkg-config
   host:
-    - pip
-    - python
+    - cython
+    - delocate  # [osx]
     - lensfun <0.3.95
     - numpy
+    - pip
+    - python
   run:
+    - cython
     - {{ pin_compatible('numpy') }}
     - lensfun <0.3.95
     - {{ pin_compatible('lensfun') }}
     - python
-    - cython
     - scipy
-    - enum34  # [py<34]
 
 test:
   imports:
@@ -53,3 +54,4 @@ extra:
     - oblute
     - mwilson8
     - rluria14
+    - anthchirp
