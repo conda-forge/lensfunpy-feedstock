@@ -1,5 +1,5 @@
 {% set name = "lensfunpy" %}
-{% set version = "1.7.0" %}
+{% set version = "1.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/letmaik/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 69ac4d0e1c59a57e9bbd0da62b0455c37d954bc5afe40f155e86847d4b8751b6
+  sha256: 1271467159384fe06add388b106db17aae287e8531fe9f89983079771ee685a0
   patches:
     - 0002_remove_osx_condition.patch
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  skip: True  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
@@ -45,7 +45,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "lensfunpy is an easy-to-use Python wrapper for the lensfun library."
+  summary: lensfunpy is an easy-to-use Python wrapper for the lensfun library.
   doc_url: https://pypi.org/project/lensfunpy/
   dev_url: https://github.com/letmaik/lensfunpy
 
