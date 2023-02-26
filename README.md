@@ -1,11 +1,11 @@
-About lensfunpy
-===============
+About lensfunpy-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lensfunpy-feedstock/blob/main/LICENSE.txt)
 
 Home: https://letmaik.github.io/lensfunpy/index.html
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lensfunpy-feedstock/blob/main/LICENSE.txt)
 
 Summary: lensfunpy is an easy-to-use Python wrapper for the lensfun library.
 
