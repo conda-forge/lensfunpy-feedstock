@@ -1,5 +1,5 @@
 {% set name = "lensfunpy" %}
-{% set version = "1.14.0" %}
+{% set version = "1.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/letmaik/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 0b1ed15254a06a14bd7e962dd49681cf7e78b45d6a90d3b89930d8f04c3ec6cc
+  sha256: 546dbd95c40251f73df9bb034c193d0cfe508a3e7ac9c4b2007bbefb32c48522
   patches:
     - 0002_remove_osx_condition.patch
 
